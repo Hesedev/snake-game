@@ -51,7 +51,7 @@ body {
 
 .game__controls {
     display: none;
-    width: 150px;
+    width: 250px;
     margin-top: 50px;
     transform: rotate(45deg);
     border-radius: 50%;
@@ -60,8 +60,8 @@ body {
 
 .game__controls .move-btn {
     all: unset;
-    width: 73px;
-    height: 73px;
+    width: 123px;
+    height: 123px;
     position: relative;
     background-color: var(--board-color);
 }
