@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <div class="game">
+        <div class="game__details">
+            <div class="game__score">Score: 0</div>
+            <div class="game__high-score">High Score: 0</div>
+        </div>
+        <div id="gameBoard" class="game__board"></div>
+        <div class="game__controls">
+            <button id="ArrowUp" class="move-btn"><i class="fa-solid fa-arrow-up"></i></button>
+            <button id="ArrowRight" class="move-btn"><i class="fa-solid fa-arrow-right"></i></button>
+            <button id="ArrowLeft" class="move-btn"><i class="fa-solid fa-arrow-left"></i></button>
+            <button id="ArrowDown" class="move-btn"><i class="fa-solid fa-arrow-down"></i></button>
+
+        </div>
+    </div>
+    <div class="overlay">
+        <div class="lobby">
+            <div class="game-settings">
+                <div class="difficulty">
+                    <label for="gameDifficulty">Game Difficulty:</label>
+                    <select id="gameDifficulty">
+                        <option value="300">Easy</option>
+                        <option value="200" selected>Normal</option>
+                        <option value="100">Hard</option>
+                    </select>
+                </div>
+                <div class="history">
+                    <i class="fa-solid fa-trophy score"><span>0</span></i>
+                    <i class="fa-solid fa-trophy high-score"><span>0</span></i>
+                </div>
+                <div class="snake-settings">
+                    <span>Snake Color:</span>
+                    <div class="snake-colors">
+                        <div class="color selected" data-hex="#00875e"></div>
+                        <div class="color" data-hex="#ff00aa"></div>
+                        <div class="color" data-hex="#00aaff"></div>
+                        <div class="color" data-hex="#d33649"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="game-over"></div>
+            <div class="btns-conatiner">
+                <button id="resetHistory">Reset High Score</button>
+                <button id="startGame">START GAME</button>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="game.js" defer></script>
+</body>
+
+</html>
