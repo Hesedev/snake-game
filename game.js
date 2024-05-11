@@ -67,7 +67,6 @@ function generateFood() {
     food.style.setProperty('grid-area', `${foodPosition.y
         } / ${foodPosition.x}`);
     gameBoard.appendChild(food);
-    console.log(food);
 }
 
 function generateSnake() {
@@ -84,7 +83,6 @@ function generateSnake() {
         }
 
         gameBoard.appendChild(piece);
-        console.log(piece);
     }
 }
 
@@ -151,6 +149,10 @@ function initGame() {
 
         // Si la serpiente choca con la comida
         if (headPosition.x == foodPosition.x && headPosition.y == foodPosition.y) {
+            let sound = new Audio();
+            sound.src = "assets/sound2.wav";
+            sound.play();
+
             score++;
             scoreDiv.innerText = `Score: ${score}`;
             highScoreDiv.innerText = `Hight Score: ${getHighScore()}`;
@@ -164,12 +166,16 @@ function initGame() {
 
         // Si la serpiente choca con los limites
         if (headPosition.x > 20 || headPosition.y > 20 || headPosition.x <= 0 || headPosition.y <= 0) {
+            const sound = new Audio("assets/collisionsound.mpeg");
+            sound.play();
             handleGameOver("Game Over! You have collided with the board limits.");
         }
 
         // Si la serpiente choca consigo misma
         for (let i = 1; i <= snakeBody.length - 1; i++) {
             if (headPosition.x == snakeBody[i].x && headPosition.y == snakeBody[i].y) {
+                const sound = new Audio("assets/collisionsound.mpeg");
+                sound.play();
                 handleGameOver("Game Over! You have collided with your body.");
             }
         }
